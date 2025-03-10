@@ -1,20 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+﻿import './App.css'
+import Home from "./pages/Home";
+import Articles from "./pages/Articles";
+import Collections from "./pages/Collections";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import Header from './Header';
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-          <div>
-              <h1>Home page</h1>
-              <div class="about_me"></div>
-              <a href="/page2.html">Go to Page2 </a> |
-              <a href="/page3.html">Go to Page3</a>
-          </div>
-    </>
+    return (
+        
+        <Router basename="/elaine_mypage">
+            <header>
+                {/*<h3><Link to="/"> 我的部落格 </Link></h3>*/}
+                <h3>我的部落格</h3>
+                <nav>
+                    <Link to="/"> Home </Link> |
+                    <Link to="/articles"> Artcles </Link>|
+                   <Link to="/collections"> Collections </Link>
+                </nav>
+            </header>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/articles" element={<Articles />} />
+                    <Route path="/collections" element={<Collections />} />
+                </Routes>
+
+
+            </Router>
+        
+
   )
 }
 
