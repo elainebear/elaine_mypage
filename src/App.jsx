@@ -2,13 +2,13 @@
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import Collections from "./pages/Collections";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import {HashRouter, BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import Header from './Header';
 function App() {
 
     return (
-        
-        <Router basename="/elaine_mypage/#/">
+        //basename = "/elaine_mypage"
+        <HashRouter>
             <header>
                 {/*<h3><Link to="/"> 我的部落格 </Link></h3>*/}
                 <h3>我的部落格</h3>
@@ -24,7 +24,7 @@ function App() {
                 <Route path="/collections" element={<Collections />} />
             </Routes>
             <footer></footer>
-        </Router>
+        </HashRouter>
         
 
   )
