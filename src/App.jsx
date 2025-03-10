@@ -8,24 +8,23 @@ function App() {
 
     return (
         
-        <Router basename="/elaine_mypage">
+        <Router basename="/elaine_mypage/#/">
             <header>
                 {/*<h3><Link to="/"> 我的部落格 </Link></h3>*/}
                 <h3>我的部落格</h3>
                 <nav>
                     <Link to="/"> Home </Link> |
                     <Link to="/articles"> Artcles </Link>|
-                   <Link to="/collections"> Collections </Link>
+                    <Link to="/collections"> Collections </Link>
                 </nav>
             </header>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/articles" element={<Articles />} />
-                    <Route path="/collections" element={<Collections />} />
-                </Routes>
-
-
-            </Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/articles" element={<Articles />} />
+                <Route path="/collections" element={<Collections />} />
+            </Routes>
+            <footer></footer>
+        </Router>
         
 
   )
