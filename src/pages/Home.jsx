@@ -12,8 +12,23 @@ function Home() {
                     <div>GitHub</div>
                 </div>
             </div>
+            <div class="media-type">
+                <button>全部</button>
+                <button>貼文</button>
+                <button>影片</button>
+            </div>
+            {/*<hr/>*/}
             <div class="content">
-                <h2>內容</h2>                
+                <div class="sort">
+                    <select>
+                        <option>由近到遠</option>
+                        <option>由遠到近</option>
+                        <option>熱門</option>
+                    </select>
+                </div>
+                <article></article> 
+                <article></article> 
+                <article></article>                
 
             </div>
         </div>

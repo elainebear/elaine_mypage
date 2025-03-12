@@ -14,10 +14,10 @@ function App() {
             <div class="container-header">
                 <header>
                     {/*<h3><Link to="/"> 我的部落格 </Link></h3>*/}
-                    <h3>我的部落格</h3>
+                    <h2>我的部落格</h2>
                     <nav>
-                        <Link to="/"> Home </Link> |
-                        <Link to="/articles"> Artcles </Link>|
+                        <Link to="/"> Home </Link> 
+                        <Link to="/articles"> Artcles </Link>
                         <Link to="/collections"> Collections </Link>
                     </nav>
                 </header>
@@ -34,7 +34,9 @@ function App() {
                 </Routes>
             </div>
             <div class="container-footer">
-                <footer></footer>
+                <footer>
+                footer
+                </footer>
             </div>
             
         </HashRouter>
