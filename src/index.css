@@ -26,15 +26,14 @@ header a {
     }
 
 body {
-  margin:0 auto;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0 auto;
+    min-width: 320px;
+    min-height: 100vh;
+    
 }
 
 
-footer a{
-    color:#fff;
-}
+
 
 button {
     border-radius: 5px;

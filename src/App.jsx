@@ -1,6 +1,7 @@
 ﻿import './App.css'
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
+import ArticleDetail from "./pages/ArticleDetial/ArticleDetail";
 import Collections from "./pages/Collections";
 import CollectionDetail from "./pages/CollectionDetial/CollectionDetail";
 
@@ -29,6 +30,7 @@ function App() {
                     {/*</div>*/}
                     <Route path="/" element={<Home />} />
                     <Route path="/articles" element={<Articles />} />
+                    <Route path="/articles/:id" element={<ArticleDetail />} />
                     <Route path="/collections" element={<Collections />} />
                     <Route path="/collections/:id" element={<CollectionDetail />} /> 
                 </Routes>
