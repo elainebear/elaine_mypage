@@ -35,7 +35,8 @@ function App() {
             </div>
             <div class="container-footer">
                 <footer>
-                footer
+                    <a href="https://elainebear.github.io/elaine_mypage/" target="_blank">Elaine Lin</a>
+                    <p>Copyright &copy; 2025 Elaine Lin </p>
                 </footer>
             </div>
             

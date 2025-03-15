@@ -5,6 +5,9 @@ function Collections() {
         { id: 1, title: "作品 1" },
         { id: 2, title: "作品 2" },
         { id: 3, title: "作品 3" },
+        { id: 4, title: "作品 4" },
+        { id: 5, title: "作品 5" },
+        { id: 6, title: "作品 6" },
     ];
     return (
         <div class="body-items">

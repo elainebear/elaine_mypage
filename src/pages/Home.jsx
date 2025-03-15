@@ -7,9 +7,17 @@ function Home() {
                 <div class="self-img">照片</div>
                 <div class="self-des">
                     <h3>關於我</h3>
-                    <div>Notion 公開筆記</div>
-                    <div>CodePen</div>
-                    <div>GitHub</div>
+                    <div>
+                        <a href="" target="_blank">Notion 公開筆記</a> 
+                       
+                    </div>
+                    <div>
+                        <a href="https://codepen.io/Elaine-the-animator" target="_blank">CodePen</a> 
+                    </div>
+                    <div>
+                        <a href="" target="_blank">GitHub</a> 
+                        
+                    </div>
                 </div>
             </div>
             <div class="media-type">
