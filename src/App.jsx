@@ -17,7 +17,9 @@ function App() {
         <HashRouter>
             <div class="container-header">
                 <header>
-                    <h3>我的部落格</h3>
+                    <h3 class="logo">
+                        <Link to="/" onClick={closeMenu}> 我的部落格 </Link> 
+                    </h3>
                     <button class="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
                     <nav class={isActive?"active":"" }> 
                         <Link to="/" onClick={closeMenu}> Home </Link> 

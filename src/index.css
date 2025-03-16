@@ -4,11 +4,16 @@
     font-weight: 400;
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: #FDFFDE;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+    text-decoration:none;
+    color:#769973;
 }
 
 header a {
@@ -31,8 +36,6 @@ body {
     min-height: 100vh;
     
 }
-
-
 
 
 button {
@@ -73,7 +76,7 @@ select {
 
 
 
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -88,5 +91,5 @@ select {
   button {
     background-color: #f9f9f9;
   }
-}
+}*/
 

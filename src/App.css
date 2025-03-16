@@ -4,7 +4,7 @@
     height:100vh;
 }
 
-.logo {
+/*.logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -15,7 +15,7 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+}*/
 
 @keyframes logo-spin {
   from {
@@ -33,6 +33,10 @@
 }
 
 
+.logo a:hover{
+    background-color:#769973;
+    color:#fff;
+}
 
 header {
     width: 80%;
@@ -110,13 +114,14 @@ footer{
     }
     nav {
         display: none;
-        flex-direction:column;
-        background-color: #769973;
+        flex-direction: column;
+        /*        background-color: #769973;*/
+        background-color: rgba(118, 153, 115, 0.9);
         border-radius: 5px;
         width: 100%;
-        position:absolute;
-        top:100%;
-        right:0;
+        position: absolute;
+        top: 100%;
+        right: 0;
     }
         nav.active {
             display: flex;
