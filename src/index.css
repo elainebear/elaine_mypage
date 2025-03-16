@@ -38,16 +38,13 @@ body {
 button {
     border-radius: 5px;
     border: 1px solid #AAAAAA;
-    /*  padding: 0.6em 1.2em;*/
     font-size: 1em;
     font-weight: 650;
     font-family: inherit;
-/*    background-color: #1a1a1a;*/
     cursor: pointer;
     transition: border-color 0.25s;
 }
     button:hover {
-        /*  border-color: #769973;*/
         background-color: #e9f2e9;
     }
     button:focus,
@@ -69,7 +66,6 @@ select {
 }
 
     select:hover {
-        /*  border-color: #769973;*/
         background-color: #fff;
         color: #769973;
         cursor: pointer;

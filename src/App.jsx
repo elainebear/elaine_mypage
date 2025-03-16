@@ -6,28 +6,28 @@ import Collections from "./pages/Collections";
 import CollectionDetail from "./pages/CollectionDetial/CollectionDetail";
 
 import {HashRouter, BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-import Header from './Header';
+import {useState } from "react"
 function App() {
-
+    const [isActive, setIsActive] = useState(false);
+    const closeMenu = () => {
+        setIsActive(false);
+    };
     return (
         //basename = "/elaine_mypage"
         <HashRouter>
             <div class="container-header">
                 <header>
-                    {/*<h3><Link to="/"> 我的部落格 </Link></h3>*/}
-                    <h2>我的部落格</h2>
-                    <nav>
-                        <Link to="/"> Home </Link> 
-                        <Link to="/articles"> Artcles </Link>
-                        <Link to="/collections"> Collections </Link>
+                    <h3>我的部落格</h3>
+                    <button class="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
+                    <nav class={isActive?"active":"" }> 
+                        <Link to="/" onClick={closeMenu}> Home </Link> 
+                        <Link to="/articles" onClick={closeMenu}> Artcles </Link>
+                        <Link to="/collections" onClick={closeMenu}> Collections </Link>
                     </nav>
                 </header>
             </div>
             <div class="container-body">
                 <Routes>
-                    {/*<div class="body-items">*/}
-                    {/*    <Route path="/" element={<Home />} />*/}
-                    {/*</div>*/}
                     <Route path="/" element={<Home />} />
                     <Route path="/articles" element={<Articles />} />
                     <Route path="/articles/:id" element={<ArticleDetail />} />
