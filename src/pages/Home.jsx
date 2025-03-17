@@ -4,26 +4,24 @@ function Home() {
     return (
         <div class="body-items">
             <div class="about_me">
-                <div class="self-img">照片</div>
-                <div class="self-des">
+                <div class="about_me-items self-img">照片</div>
+                <div class="about_me-items self-des">
                     <h3>關於我</h3>
                     <div>
                         <a href="" target="_blank">Notion 公開筆記</a> 
-                       
                     </div>
                     <div>
                         <a href="https://codepen.io/Elaine-the-animator" target="_blank">CodePen</a> 
                     </div>
                     <div>
-                        <a href="" target="_blank">GitHub</a> 
-                        
+                        <a href="https://github.com/elainebear" target="_blank">GitHub</a> 
                     </div>
                 </div>
             </div>
             <div class="media-type">
-                <button>全部</button>
-                <button>貼文</button>
-                <button>影片</button>
+                <button class="media-type-btn">全部</button>
+                <button class="media-type-btn">貼文</button>
+                <button class="media-type-btn">影片</button>
             </div>
             {/*<hr/>*/}
             <div class="content">

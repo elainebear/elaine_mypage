@@ -115,8 +115,7 @@ footer{
     nav {
         display: none;
         flex-direction: column;
-        /*        background-color: #769973;*/
-        background-color: rgba(118, 153, 115, 0.9);
+        background-color: rgba(118, 153, 115, 0.8);
         border-radius: 5px;
         width: 100%;
         position: absolute;
@@ -128,7 +127,7 @@ footer{
         }
 }
 /*¤â¾÷¼e«×*/
-@media(max-width:360px){
+@media(max-width:390px){
     .body-items{
         width:100%;
     }
