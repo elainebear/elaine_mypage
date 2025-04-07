@@ -94,9 +94,10 @@ footer{
         margin: 0px;
     }
 
-.menu-toggle{
-    display:none;
-    cursor:pointer;
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    background-color: #fdffde;
 }
 
 

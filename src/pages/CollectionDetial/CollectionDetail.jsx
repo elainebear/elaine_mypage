@@ -1,5 +1,4 @@
 ﻿import { useParams, Link } from "react-router-dom";
-//import { Suspense, lazy } from "react";
 import { Suspense, lazy } from "react";
 
 
