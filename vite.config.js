@@ -5,7 +5,7 @@ import plugin from '@vitejs/plugin-react';
 export default defineConfig({
     base: "/elaine_mypage/",
     plugins: [plugin()],
-    //server: {
-    //    port: 60011,
-    //}
+    server: {
+        port: 60011,
+    }
 })
