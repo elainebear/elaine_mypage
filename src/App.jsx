@@ -5,7 +5,7 @@ import ArticleDetail from "./pages/ArticleDetial/ArticleDetail";
 import Collections from "./pages/Collections";
 import CollectionDetail from "./pages/CollectionDetial/CollectionDetail";
 
-import {HashRouter, BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import {HashRouter, BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom"
 import {useState } from "react"
 function App() {
     const [isActive, setIsActive] = useState(false);
@@ -22,9 +22,9 @@ function App() {
                     </h3>
                     <button class="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
                     <nav class={isActive?"active":"" }> 
-                        <Link to="/" onClick={closeMenu}> Home </Link> 
-                        <Link to="/articles" onClick={closeMenu}> Artcles </Link>
-                        <Link to="/collections" onClick={closeMenu}> Collections </Link>
+                        <NavLink to="/" onClick={closeMenu}> Home </NavLink> 
+                        <NavLink to="/articles" onClick={closeMenu}> Artcles </NavLink>
+                        <NavLink to="/collections" onClick={closeMenu}> Collections </NavLink>
                     </nav>
                 </header>
             </div>

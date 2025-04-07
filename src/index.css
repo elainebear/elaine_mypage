@@ -19,16 +19,20 @@ a{
 header a {
     font-weight: 500;
     color: #fff;
-    padding:5px;
+    padding: 5px;
     text-decoration: inherit;
-    
+    border-radius: 5px;
+    transition: background-color ease-in-out 0.3s;
 }
     header a:hover {
         background-color: #fff;
         color: #769973;
-        border-radius:5px;
-
     }
+
+header .active {
+    background-color: #fff;
+    color: #769973;
+}
 
 body {
     margin: 0 auto;
