@@ -15,19 +15,19 @@ function App() {
     return (
         //basename = "/elaine_mypage"
         <HashRouter>
-            <div class="container-header">
-                <header>
+            < header>
+                <div class="container-header">
                     <h3 class="logo">
                         <Link to="/" onClick={closeMenu}> 我的部落格 </Link> 
                     </h3>
                     <button class="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
-                    <nav class={isActive?"active":"" }> 
-                        <NavLink to="/" onClick={closeMenu}> Home </NavLink> 
+                    <nav class={isActive ? "active" : ""}>
+                        <NavLink to="/" onClick={closeMenu} > Home </NavLink> 
                         <NavLink to="/articles" onClick={closeMenu}> Artcles </NavLink>
                         <NavLink to="/collections" onClick={closeMenu}> Collections </NavLink>
                     </nav>
-                </header>
-            </div>
+                </div>
+            </header>
             <div class="container-body">
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -37,12 +37,12 @@ function App() {
                     <Route path="/collections/:id" element={<CollectionDetail />} /> 
                 </Routes>
             </div>
-            <div class="container-footer">
-                <footer>
+            <footer >
+                <div class="container-footer">
                     <a href="https://elainebear.github.io/elaine_mypage/" target="_blank">Elaine Lin</a>
                     <p>Copyright &copy; 2025 Elaine Lin </p>
-                </footer>
-            </div>
+                </div>
+            </footer >
             
         </HashRouter>
         

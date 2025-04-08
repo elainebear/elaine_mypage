@@ -17,17 +17,17 @@ function Articles() {
     }
 
     return (
-        <div class="body-items">
-            <h3> { heading } </h3>
-            <div class="articles">
-                {articles.map((articles) => (
-                    <Link to={`/articles/${articles.id}`} key={Articles.id} /*class="articles-items"*/>
-                        <ArticleList article={articles} /*key={Articles.id}*/ />
-                    </Link>
-                ))}
+        <section class="body-items">
+            <h3 class="heading"> {heading} </h3>
 
-            </div>
-        </div>
+            {articles.map((articles) => (
+                <Link to={`/articles/${articles.id}`} key={Articles.id} /*class="articles-items"*/>
+                    <ArticleList article={articles} /*key={Articles.id}*/ />
+                </Link>
+             ))}
+
+            
+        </section>
 
     );
 }

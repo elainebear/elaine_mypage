@@ -1,6 +1,3 @@
-div {
-/*    max-width: 1200px;*/
-}
 .about_me {
     /*    background-color: #747bff;*/
     height: 200px;
@@ -59,7 +56,7 @@ article {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自適應列數 */
     gap: 20px;
-    padding: 20px;
+/*    padding: 20px;*/
 }
 .collections-items {
     height: 150px;
@@ -139,12 +136,13 @@ article {
         padding-left: 10px;
         padding-bottom: 10px;
     }
+
     .content{
         padding:10px;
     }
     .collections {
         max-width:100%;
-        padding: 10px;
+/*        padding: 10px;*/
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 自適應列數 */
         }
     .articles {

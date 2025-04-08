@@ -39,6 +39,19 @@
 }
 
 header {
+    width: 100%;
+    /*    height: 50px;*/
+    background-color: #769973;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-header {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -47,20 +60,11 @@ header {
     justify-content: space-between;
 }
 
-.container-header {
-    width: 100%;
-    height:50px;
-    background-color: #769973;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
+
 .container-body {
     width: 100%;
+    min-height:100%;
+    min-height:100%;
     padding-top:50px;
 /*    position:relative;  
     top:100px;*/
@@ -74,23 +78,22 @@ header {
     background-color: #FDFFDE;
     padding:10px;
 }
-.container-footer {
+footer {
     width: 100%;
     background-color: #769973;
-
 }
-footer{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-    footer a {
+    .container-footer a {
         color: #213547;
     }
-    footer a:hover {
-        color: #fff;
-    }
-    footer p{
+        .container-footer a:hover {
+            color: #fff;
+        }
+    .container-footer p {
         margin: 0px;
     }
 
@@ -103,32 +106,33 @@ footer{
 
 /*平板寬度*/
 @media(max-width:768px) {
-    header {
-        width: 100%;
-        padding:20px;
-    }
+
     .body-items {
         width: 80%;
     }
     .menu-toggle{
         display:block;
     }
+
     nav {
         display: none;
         flex-direction: column;
-        background-color: rgba(118, 153, 115, 0.8);
-        border-radius: 5px;
         width: 100%;
         position: absolute;
         top: 100%;
         right: 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
+        nav a {
+            background-color: rgba(118, 153, 115, 0.9);
+            border-radius:0px;
+        }
         nav.active {
             display: flex;
         }
 }
 /*手機寬度*/
-@media(max-width:390px){
+@media(max-width:450px){
     .body-items{
         width:100%;
     }

@@ -17,8 +17,8 @@ function Collections() {
     }
 
     return (
-        <div class="body-items">
-            <h3> { heading } </h3>
+        <section class="body-items">
+            <h3 class="heading"> { heading } </h3>
             <div class="collections">
                 {collections.map((collections) => (
                     <Link to={`/collections/${collections.id}`} key={Collections.id} class="collections-items">
@@ -28,7 +28,7 @@ function Collections() {
                 
             </div>
             
-        </div>
+        </section>
     );
 
 }
