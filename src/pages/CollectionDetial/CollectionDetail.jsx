@@ -12,9 +12,9 @@ function CollectionDetail() {
 
     return (
         
-        <div class="body-items">
+        <div className="body-items">
             <p>
-                <Link to="/Collections" class="return">返回作品列表</Link>
+                <Link to="/Collections" className="return">返回作品列表</Link>
             </p>
             <h1>這是作品 {id} 的詳細內容</h1>
             <Suspense fallback={<p>載入中...</p>}>

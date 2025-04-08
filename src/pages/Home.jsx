@@ -2,10 +2,10 @@
 
 function Home() {
     return (
-        <div class="body-items">
-            <div class="about_me">
-                <div class="about_me-items self-img">照片</div>
-                <div class="about_me-items self-des">
+        <div className="body-items">
+            <div className="about_me">
+                <div className="about_me-items self-img">照片</div>
+                <div className="about_me-items self-des">
                     <h3>關於我</h3>
                     <div>
                         <a href="" target="_blank">Notion 公開筆記</a> 
@@ -18,14 +18,14 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div class="media-type">
-                <button class="media-type-btn">全部</button>
-                <button class="media-type-btn">貼文</button>
-                <button class="media-type-btn">影片</button>
+            <div className="media-type">
+                <button className="media-type-btn">全部</button>
+                <button className="media-type-btn">貼文</button>
+                <button className="media-type-btn">影片</button>
             </div>
             {/*<hr/>*/}
-            <div class="content">
-                <div class="sort">
+            <div className="content">
+                <div className="sort">
                     <select>
                         <option>由近到遠</option>
                         <option>由遠到近</option>

@@ -17,11 +17,11 @@ function Collections() {
     }
 
     return (
-        <section class="body-items">
-            <h3 class="heading"> { heading } </h3>
-            <div class="collections">
+        <section className="body-items">
+            <h3 className="heading"> { heading } </h3>
+            <div className="collections">
                 {collections.map((collections) => (
-                    <Link to={`/collections/${collections.id}`} key={Collections.id} class="collections-items">
+                    <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
                         {collections.title}
                     </Link>  
                 ))}
