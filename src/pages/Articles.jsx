@@ -1,5 +1,7 @@
 ﻿import { Link } from "react-router-dom";
 import ArticleList from "./ArticleList.jsx";
+
+//connect to firebase
 import { db } from "../firebase.js";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
@@ -13,7 +15,7 @@ function Articles() {
         async function fetchArticles() {
             const querySnapshot = await getDocs(collection(db, "articles"));
             const data = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
+                id : doc.id,
                 ...doc.data(),
             }));
             setArticles(data);
@@ -41,8 +43,6 @@ function Articles() {
                     <ArticleList article={articles}  />
                 </Link>
              ))}
-
-            
         </section>
 
     );

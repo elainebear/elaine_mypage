@@ -1,12 +1,19 @@
 ﻿import './App.css'
-import Home from "./pages/Home";
-import Articles from "./pages/Articles";
-import ArticleDetail from "./pages/ArticleDetial/ArticleDetail";
-import Collections from "./pages/Collections";
-import CollectionDetail from "./pages/CollectionDetial/CollectionDetail";
+//import Home from "./pages/Home";
+//import Articles from "./pages/Articles";
+//import ArticleDetail from "./pages/ArticleDetial/ArticleDetail";
+//import Collections from "./pages/Collections";
+//import CollectionDetail from "./pages/CollectionDetial/CollectionDetail";
 
 import {HashRouter, BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom"
-import {useState } from "react"
+import { useState } from "react"
+import { Suspense, lazy } from "react";
+
+const Home = lazy(() => import("./pages/Home"));
+const Articles = lazy(() => import("./pages/Articles"));
+const ArticleDetail = lazy(() => import("./pages/ArticleDetial/ArticleDetail"));
+const Collections = lazy(() => import("./pages/Collections"));
+const CollectionDetail = lazy(() => import("./pages/CollectionDetial/CollectionDetail"));
 function App() {
     const [isActive, setIsActive] = useState(false);
     const closeMenu = () => {
@@ -29,13 +36,16 @@ function App() {
                 </div>
             </header>
             <div className="container-body">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/articles" element={<Articles />} />
-                    <Route path="/articles/:id" element={<ArticleDetail />} />
-                    <Route path="/collections" element={<Collections />} />
-                    <Route path="/collections/:id" element={<CollectionDetail />} /> 
-                </Routes>
+                <Suspense fallback={<div>Loading...</div> } >
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/articles" element={<Articles />} />
+                        <Route path="/articles/:id" element={<ArticleDetail />} />
+                        <Route path="/collections" element={<Collections />} />
+                        <Route path="/collections/:id" element={<CollectionDetail />} />
+                    </Routes>
+                </Suspense>
+                
             </div>
             <footer >
                 <div className="container-footer">

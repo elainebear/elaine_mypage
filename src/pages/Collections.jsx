@@ -1,13 +1,24 @@
 ﻿import { Link } from "react-router-dom";
 
+//connect to firebase
+import { db } from "../firebase.js";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+
 function Collections() {
-    const collections = [
-        { id: 1, title: "作品 1" },
-        { id: 2, title: "作品 2" },
-        { id: 3, title: "作品 3" },
-        { id: 4, title: "作品 4" },
-        { id: 5, title: "作品 5" },
-        { id: 6, title: "作品 6" }];
+    const [collections, setCollection] = useState([]);
+
+    useEffect(() => {
+        async function fetchCollection() {
+            const query_coll = await getDocs(collection(db, "collections"));
+            const data = query_coll.docs.map((doc) => ({
+                id : doc.id,
+                ...doc.data(),
+            }));
+            setCollection(data);
+        }
+        fetchCollection();
+    }, []);
 
     let heading = 'No collection';
     const count = collections.length;
@@ -22,7 +33,7 @@ function Collections() {
             <div className="collections">
                 {collections.map((collections) => (
                     <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
-                        {collections.title}
+                        {collections.c_title}
                     </Link>  
                 ))}
                 

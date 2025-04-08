@@ -30,7 +30,7 @@ function ArticleDetail() {
         fetchArticle();
     }, [id]);
     if (!article) {
-        return <p></p>
+        return <p>Loading...</p>
     }
     return (
         
@@ -41,7 +41,6 @@ function ArticleDetail() {
             <h1>{article.title}</h1>
             <p>發布日期：{article.date.toDate().toLocaleDateString()}</p>
             <div>{article.content}</div>
-            
 
         </div>
         
