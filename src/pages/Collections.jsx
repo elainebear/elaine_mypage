@@ -1,4 +1,5 @@
 ﻿import { Link } from "react-router-dom";
+import './Home.css'
 
 //connect to firebase
 import { db } from "../firebase.js";

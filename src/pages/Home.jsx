@@ -1,6 +1,9 @@
 ﻿import './Home.css'
+import { useState } from "react"
+
 
 function Home() {
+    const [name, setName] = useState("");
     return (
         <div className="body-items">
             <div className="about_me">
@@ -22,6 +25,7 @@ function Home() {
                 <button className="media-type-btn">全部</button>
                 <button className="media-type-btn">貼文</button>
                 <button className="media-type-btn">影片</button>
+                
             </div>
             {/*<hr/>*/}
             <div className="content">

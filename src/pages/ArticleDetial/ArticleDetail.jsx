@@ -1,23 +1,18 @@
 ﻿import { useParams, Link } from "react-router-dom";
-//import { Suspense, lazy } from "react";
+import '../Home.css'
+//connect to firebase
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
-//import dayjs from "dayjs";
 import { db } from "../../firebase.js";
 
 
 function ArticleDetail() {
-    const { id } = useParams(); // 取得網址上的 `id`
-    
+    const { id } = useParams(); // 取得網址上的 id
     const [article, setArticle] = useState(null);
-    //const ArtworkComponent = lazy(() => import(`./Article_folder/artwork${id}.jsx`).catch(() => ({ default: NotFound })));
 
-    //function NotFound() {
-    //    return <p>找不到該文章</p>
-    //}
     useEffect(() => {
         const fetchArticle = async () => {
-            const docRef = doc(db, "articles", id); // 假設你的 collection 叫 articles
+            const docRef = doc(db, "articles", id); // firebase collection 名字(articles)
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {

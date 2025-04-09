@@ -1,10 +1,4 @@
 ﻿import './App.css'
-//import Home from "./pages/Home";
-//import Articles from "./pages/Articles";
-//import ArticleDetail from "./pages/ArticleDetial/ArticleDetail";
-//import Collections from "./pages/Collections";
-//import CollectionDetail from "./pages/CollectionDetial/CollectionDetail";
-
 import {HashRouter, BrowserRouter as Router, Routes, Route, Link, NavLink } from "react-router-dom"
 import { useState } from "react"
 import { Suspense, lazy } from "react";
