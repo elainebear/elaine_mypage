@@ -133,6 +133,10 @@ article {
         color: #fff;
     }
 
+.flex-container{
+    display:flex;
+    justify-content:flex-start;
+}
 @media(max-width:768px) {
     .about_me{
         max-width:100%;
