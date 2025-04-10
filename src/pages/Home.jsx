@@ -1,9 +1,7 @@
 ﻿import './Home.css'
-import { useState } from "react"
-
 
 function Home() {
-    const [name, setName] = useState("");
+
     return (
         <div className="body-items">
             <div className="about_me">

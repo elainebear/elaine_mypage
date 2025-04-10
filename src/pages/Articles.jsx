@@ -49,7 +49,7 @@ function Articles() {
                 type="text"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
-                placeholder="搜尋標題"
+                placeholder="搜尋文章標題"
             />
             {filterArticles.length > 0 ? (
                 filterArticles.map((articles) => (

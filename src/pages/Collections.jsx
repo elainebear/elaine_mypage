@@ -8,6 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 function Collections() {
     const [collections, setCollection] = useState([]);
+    const [query, setQuery] = useState("");
 
     useEffect(() => {
         async function fetchCollection() {
@@ -21,18 +22,28 @@ function Collections() {
         fetchCollection();
     }, []);
 
-    let heading = 'No collection';
-    const count = collections.length;
+    const filterCollection = collections.filter(collection => collection.c_title.toLowerCase().includes(query.toLowerCase()));
+
+    let heading = 'No collection found';
+    const count = query ? filterCollection.length : collections.length;
     if (count > 0) {
-        const noun = count > 1 ? 'Collections' : 'Collection';
-        heading = count + ' ' + noun;
+        const noun = count > 1 ? 'collections' : 'collection';
+        heading = query
+            ? count + ' ' + noun + ' matching your search'
+            : count + ' ' + noun;
     }
 
     return (
         <section className="body-items">
-            <h3 className="heading"> { heading } </h3>
+            <h3 className="heading"> {heading} </h3>
+            <input
+                type="text"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder="搜尋作品標題"
+            />
             <div className="collections">
-                {collections.map((collections) => (
+                {filterCollection.map((collections) => (
                     <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
                         {collections.c_title}
                     </Link>  

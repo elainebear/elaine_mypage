@@ -52,7 +52,7 @@ article {
 /*Collection*/
 .collections {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* ¦Û¾AÀ³¦C¼Æ */
     gap: 20px;
@@ -103,7 +103,13 @@ article {
     padding:20px;
 }
 .articles-items {
-    height:200px;
+    height: 200px;
+    /*background: radial-gradient(circle at 20% 30%, #f8d5e3 0%, transparent 40%), radial-gradient(circle at 70% 40%, #e6d7f3 0%, transparent 50%), radial-gradient(circle at 50% 80%, #d0eaff 0%, transparent 50%);
+    background-color: #fff5fb;
+    background-blend-mode: lighten;*/
+    /*    filter: blur(20px);*/
+    /*background-color: #fff5fb;*/
+
     background-color: #769973;
     color: #fff;
     border-radius: 5px;

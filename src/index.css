@@ -34,6 +34,8 @@ header a.active {
     color: #769973;
 }
 
+
+
 body {
     margin: 0 auto;
     min-width: 320px;
@@ -41,6 +43,24 @@ body {
 }
 
 
+
+input {
+    box-sizing:border-box;
+/*    padding-left:50%;*/
+    width:inherit;
+    padding: 5px 0px;
+    border-radius: 10em;
+    border: 1px solid #AAAAAA;
+    font-size: 1em;
+    font-weight: 650;
+    font-family: inherit;
+    text-align:center;
+    transition: border-color 0.25s;
+}
+    input:focus {
+        outline:none;
+        border: 1px solid #AAAAAA;
+    }
 
 button {
     border-radius: 5px;
@@ -51,13 +71,14 @@ button {
     cursor: pointer;
     transition: border-color 0.25s;
 }
-    button:hover {
+    button:hover, input:hover {
         background-color: #e9f2e9;
     }
     button:focus,
     button:focus-visible {
         background-color: #769973;
         color:#fff;
+
     }
 
 select {
@@ -78,7 +99,9 @@ select {
         cursor: pointer;
     }
 
-
+/*input{
+    
+}*/
 
 /*@media (prefers-color-scheme: light) {
   :root {
