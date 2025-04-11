@@ -59,7 +59,7 @@ header {
 
 .hero-layout {
 /*    height: 100vh;*/
-    width:100vw;
+    width:100%;
     display:flex;
     flex-direction: column;
 }
@@ -69,7 +69,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #769973
+    background-color: #769973;
+    text-align:center;
 }
 
 .hero-title {
@@ -261,7 +262,7 @@ footer {
 
 /*¤â¾÷¼e«×*/
 @media(max-width:450px){
-    .body-items{
-        width:100%;
+    .body-items .hero-section {
+        width: 100%;
     }
 }
