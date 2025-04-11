@@ -1,4 +1,5 @@
 ﻿import './Home.css'
+import '../loader.css'
 
 function Home() {
 
@@ -34,6 +35,7 @@ function Home() {
                         <option>熱門</option>
                     </select>
                 </div>
+
                 <article></article> 
                 <article></article> 
                 <article></article>                
