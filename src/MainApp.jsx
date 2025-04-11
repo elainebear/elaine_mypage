@@ -18,17 +18,17 @@ function MainApp() {
             < header>
                 <div className="container-header">
                     <h3 className="logo">
-                        <Link to="/" onClick={closeMenu}> 我的部落格 </Link> 
+                        <Link to="/" onClick={closeMenu}> 我的部落格 </Link>
                     </h3>
                     <button className="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
                     <nav className={isActive ? "active" : ""}>
-                        <NavLink to="/" onClick={closeMenu} > Home </NavLink> 
+                        <NavLink to="/" onClick={closeMenu} > Home </NavLink>
                         <NavLink to="/articles" onClick={closeMenu}> Artcles </NavLink>
                         <NavLink to="/collections" onClick={closeMenu}> Collections </NavLink>
                     </nav>
                 </div>
             </header>
-            
+
 
             <div className="container-body">
                 <Suspense fallback={<div>Loading...</div> } >

@@ -9,6 +9,7 @@ import { collection, getDocs } from "firebase/firestore";
 function Collections() {
     const [collections, setCollection] = useState([]);
     const [query, setQuery] = useState("");
+    const [sortOrder, setSortOrder] = useState("newest");
 
     useEffect(() => {
         async function fetchCollection() {
@@ -16,6 +17,7 @@ function Collections() {
             const data = query_coll.docs.map((doc) => ({
                 id : doc.id,
                 ...doc.data(),
+                date: doc.data().c_date.toDate(), //確保 date 是 JS 日期物件
             }));
             setCollection(data);
         }
@@ -33,19 +35,40 @@ function Collections() {
             : count + ' ' + noun;
     }
 
+    const sortedCollections = [...filterCollection].sort((a, b) =>
+        sortOrder === "newest"
+            ? b.date - a.date
+            : a.date - b.date
+    );
+
     return (
         <section className="body-items">
             <h3 className="heading"> {heading} </h3>
-            <input
-                type="text"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                placeholder="搜尋作品標題"
-            />
+            
+            <div className="flex-container">
+                <input
+                    type="text"
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    placeholder="搜尋作品標題"
+                />
+
+                <div className="select-wrapper">
+                    <select
+                        value={sortOrder}
+                        onChange={e => setSortOrder(e.target.value)}>
+                        <option value="newest">最新</option>
+                        <option value="oldest">最舊</option>
+                    </select>
+                </div>
+            </div>
+
             <div className="collections">
-                {filterCollection.map((collections) => (
+                {sortedCollections.map((collections) => (
                     <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
-                        {collections.c_title}
+                        <p>{collections.c_title}</p>
+                        <p>{collections.date.toLocaleDateString()}</p>
+                        
                     </Link>  
                 ))}
                 

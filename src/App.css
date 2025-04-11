@@ -38,37 +38,49 @@
     color:#fff;
 }
 
+
+
 header {
     width: 100%;
-    /*    height: 50px;*/
+    height:65px;
     /*background: radial-gradient(circle at 20% 30%, #f8d5e3 0%, transparent 40%), radial-gradient(circle at 70% 40%, #e6d7f3 0%, transparent 50%), radial-gradient(circle at 50% 80%, #d0eaff 0%, transparent 50%);
     background-color: #fff5fb;
     background-blend-mode: lighten;*/
     /*    filter: blur(20px);*/
     /*    background: linear-gradient(135deg, #f8d5e3 0%, #e6d7f3 50%, #d0eaff 100%);*/
     background-color: #769973;
-
     position: sticky;
     top: 0;
-
     display: flex;
     justify-content: center;
-    z-index: 1000;
+    z-index: 10;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/*    header::before {
-        content: "";
-        position: absolute;
-        width: 160%;
-        height: 160%;
-        top: -30%;
-        left: -30%;
-        background: radial-gradient(circle at 20% 30%, rgba(255, 210, 235, 0.35) 0%, transparent 60%), radial-gradient(circle at 80% 40%, rgba(210, 230, 255, 0.3) 0%, transparent 60%), radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-        filter: blur(80px);
-        opacity: 0.8;
-        z-index: 1001;
-    }*/
+.hero-layout {
+/*    height: 100vh;*/
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+}
+.hero-section {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #769973
+}
+
+.hero-title {
+    margin: 0px;
+    font-size: 6rem;
+    text-shadow: 6px 6px 0px #fff;
+    color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #333;
+}
+
 
 .container-header {
     width: 80%;
@@ -79,14 +91,10 @@ header {
     justify-content: space-between;
 }
 
-
 .container-body {
     width: 100%;
     min-height:100%;
     min-height:100%;
-/*    position:relative;  
-    top:100px;*/
-
     background-color: #A0C89C;
     display: flex;
     justify-content: stretch;
