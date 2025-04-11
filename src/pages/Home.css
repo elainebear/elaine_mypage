@@ -163,3 +163,11 @@ article {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ¦Û¾AÀ³¦C¼Æ */
     }
     }
+@media(max-width:576px){
+    .flex-container{
+        justify-content:space-between;
+    }
+    .select-wrapper{
+        margin: 0px;
+    }
+}

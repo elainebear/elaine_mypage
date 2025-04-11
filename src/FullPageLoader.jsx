@@ -1,5 +1,4 @@
-﻿import './App.css'
-import './loader.css'
+﻿import './loader.css'
 
 function FullPageLoader({ slideOut }) {
 
