@@ -63,8 +63,6 @@ function Articles() {
                     onChange={e => setQuery(e.target.value)}
                     placeholder="搜尋文章標題"
                 />
-                {/*<button onClick={() => setSortOrder("newest")}>最新</button>*/}
-                {/*<button onClick={() => setSortOrder("oldest")}>最舊</button>*/}
                 <div className="select-wrapper">
                     <select
                         value={sortOrder}

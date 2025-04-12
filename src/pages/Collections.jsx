@@ -52,7 +52,6 @@ function Collections() {
                     onChange={e => setQuery(e.target.value)}
                     placeholder="搜尋作品標題"
                 />
-
                 <div className="select-wrapper">
                     <select
                         value={sortOrder}

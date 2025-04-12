@@ -1,7 +1,30 @@
 html {
     scroll-behavior: smooth;
 }
+body::-webkit-scrollbar {
+    width: 8px;
+}
 
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* 2. 滾輪本體（平常狀態） */
+body::-webkit-scrollbar-thumb {
+    background: #9dbf9e;
+    border-radius: 10px;
+    cursor: grab; 
+}
+
+    /* 3. 滑鼠 hover 在滾輪本體時 */
+    body::-webkit-scrollbar-thumb:hover {
+        background: #6c8f6e;
+        
+    }
+    body::-webkit-scrollbar-thumb:active{
+        cursor:grabbing;
+    }
 
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
