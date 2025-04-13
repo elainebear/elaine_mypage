@@ -7,21 +7,29 @@ import { useRef } from 'react'
 function Home() {
     const contentRef = useRef(null);
     const scrollToContent = () => {
-        contentRef.current?.scrollIntoView({ behavior: 'smooth' }) // ?. (Optional chaining) 如果 contentRef.current 存在就執行
+        contentRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+
+        // 等待滾動完成後，再微調偏移
+        setTimeout(() => {
+            window.scrollBy(0, -30); // 微調偏移，這裡 -100 是導覽列的高度
+        }, 500); // 延遲時間要與 scrollIntoView 的動畫時間相匹配
     };
 
     return (
         <div className="hero-layout">
             <div className="hero-section">
                 <HeroText />
-                <button onClick={scrollToContent}>
+                <button onClick={scrollToContent} aria-label="scrolltocontent">
                     <i className="fa-solid fa-arrow-down fa-2x"></i>
                 </button>
             </div>
 
             <div className="body-items" ref={contentRef}>
                 <div className="about_me">
-                    <h3>About me</h3>
+                    <h1 className="about_me_title">About me</h1>
                     <div className="about_me-items self-img">照片</div>
                     <div className="about_me-items self-des">
                         <div>

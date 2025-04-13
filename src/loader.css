@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /*不阻擋底下操作 */
+    pointer-events: none; 
     z-index: 9999;
     overflow: hidden;
 }
@@ -15,85 +15,23 @@
     top: 0;
     width: 50vw;
     height: 100vh;
-    background-color: #769973; /*#8abcbc*/
-    /*    background: linear-gradient(135deg, #f8d5e3 0%, #e6d7f3 50%, #d0eaff 100%);*/
+    background-color: #769973; 
     transition: transform 1.5s ease-in-out;
     z-index: 9999;
 }
 
 .fullscreen-loader-l {
     left: 0;
-    /*    background: linear-gradient(135deg, #f8d5e3 0%, #e6d7f3 50%, #d0eaff 100%);*/
-    /*background: 
-  radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0), #fff),
-  radial-gradient(farthest-side at bottom left, #e992d3, transparent), 
-  radial-gradient(farthest-side at top left, #a4fff6, transparent), 
-  radial-gradient(farthest-corner at bottom right, #ff7ece, transparent),
-  radial-gradient(farthest-corner at top right,  #ff7ece, transparent);*/
 }
 
 .fullscreen-loader-r {
     right: 0;
-    /*    background: linear-gradient(-135deg, #f8d5e3 0%, #e6d7f3 50%, #d0eaff 100%);*/
-    /*background: 
-  radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0), #fff),
-  radial-gradient(farthest-side at bottom right, #e992d3, transparent), 
-  radial-gradient(farthest-side at top right, #a4fff6, transparent), 
-  radial-gradient(farthest-corner at bottom left, #ff7ece, transparent),
-  radial-gradient(farthest-corner at top left,  #ff7ece, transparent);
-*/
 }
 
 /* 往兩邊滑出 */
 .slide-out-l {
     transform: translateX(-100%);
 }
-
 .slide-out-r {
     transform: translateX(100%);
 }
-
-/* 霧效果
-@keyframes fogFadeOut {
-    0% {
-        opacity: 1;
-        filter: blur(0px);
-        transform: scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        filter: blur(20px);
-        transform: scale(1.05);
-    }
-}*/
-
-.fog-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(135deg, #f8d5e3, #e6d7f3, #d0eaff);
-    z-index: 9999;
-    animation: fogFadeOut 2s ease-out forwards;
-}
-
-
-/*    .spinner {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #ccc;
-    border-top: 6px solid #333;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}*/
-
-
-
-/*@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-*/

@@ -97,7 +97,7 @@ button {
     font-weight: 650;
     font-family: inherit;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: border-color 0.25s;
 }
     button:hover, input:hover {
         background-color: #e9f2e9;
