@@ -14,7 +14,7 @@ function Header() {
         < header>
             <div className="container-header">
                 <h3 className="logo">
-                    <Link to="/" onClick={closeMenu}> 我的部落格 </Link>
+                    <Link to="/" onClick={closeMenu}> Elaine </Link>
                 </h3>
                 <button className="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
                 <nav className={isActive ? "active" : ""}>

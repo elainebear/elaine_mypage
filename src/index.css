@@ -39,25 +39,34 @@ body::-webkit-scrollbar-thumb {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
 a{
     text-decoration:none;
     color:#769973;
 }
 
 header a {
-    font-weight: 500;
+    font-weight: 700;
     color: #fff;
     padding: 5px;
     text-decoration: inherit;
     border-radius: 5px;
     transition: background-color ease-in-out 0.3s;
 }
-    header a:hover {
-        background-color: #fff;
-        color: #769973;
-    }
+nav{
+    display:flex;
+    gap:10px;
+}
+nav a:hover {
+    background-color: #fff;
+    color: #769973;
+}
 
-header a.active {
+nav a.active {
     background-color: #fff;
     color: #769973;
 }
@@ -139,7 +148,9 @@ select {
         cursor: pointer;
     }
 
+footer a{
 
+}
 
 /*@media (prefers-color-scheme: light) {
   :root {

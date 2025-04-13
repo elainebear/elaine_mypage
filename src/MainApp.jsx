@@ -27,7 +27,9 @@ function MainApp() {
 
             <footer >
                 <div className="container-footer">
-                    <a href="https://elainebear.github.io/elaine_mypage/" target="_blank">Elaine Lin</a>
+                    <a href="https://elainebear.github.io/elaine_mypage/" target="_blank">Notion</a>
+                    <a href="https://elainebear.github.io/elaine_mypage/" target="_blank">GitHub</a>
+                    <a href="https://elainebear.github.io/elaine_mypage/" target="_blank">CodePen</a>
                     <p>Copyright &copy; 2025 Elaine Lin </p>
                 </div>
             </footer > 

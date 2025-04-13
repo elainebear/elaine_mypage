@@ -32,13 +32,20 @@ function Home() {
                     <h1 className="about_me_title">About me</h1>
                     <div className="about_me-items self-img">照片</div>
                     <div className="about_me-items self-des">
-                        <div>
-                            <a href="" target="_blank">Notion 公開筆記</a> 
+                        <div className="des-font">
+                            <p>Hi there, I'm Elaine ♡ Welcome to my little blog corner~</p>
+                            <p>As you can see, this place is still a work in progress🛠️ </p>
+                            <p>But I'm working hard behind the scenes! </p>
+                            <p>Hope to see you again soon with a cuter look✨</p>
                         </div>
-                        <div>
+                        
+                        <div className="des-web">
+                            <a href="" target="_blank">Notion</a> 
+                        </div>
+                        <div className="des-web">
                             <a href="https://codepen.io/Elaine-the-animator" target="_blank">CodePen</a> 
                         </div>
-                        <div>
+                        <div className="des-web">
                             <a href="https://github.com/elainebear" target="_blank">GitHub</a> 
                         </div>
                     </div>
@@ -56,13 +63,13 @@ function Home() {
                 {/*</div>*/}
 
                 <div className="content">
-                    <div className="sort">
-                        <select>
-                            <option>最新</option>
-                            <option>最舊</option>
-                            <option>熱門</option>
-                        </select>
-                    </div>
+                    {/*<div className="select-wrapper">*/}
+                    {/*    <select>*/}
+                    {/*        <option>最新</option>*/}
+                    {/*        <option>最舊</option>*/}
+                    {/*        <option>熱門</option>*/}
+                    {/*    </select>*/}
+                    {/*</div>*/}
 
                     <article></article> 
                     <article></article> 
