@@ -4,7 +4,6 @@ import './Home.css'
 
 //connect to firebase
 import { db } from "../firebase.js";
-
 import { collection, getDocs } from "firebase/firestore";
 
 const ArticleList = lazy(() => import("./ArticleList"));

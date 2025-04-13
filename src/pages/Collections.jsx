@@ -1,9 +1,8 @@
 ﻿import { Link } from "react-router-dom";
 import './Home.css'
-
+import { useEffect, useState } from "react";
 //connect to firebase
 import { db } from "../firebase.js";
-import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 
 function Collections() {

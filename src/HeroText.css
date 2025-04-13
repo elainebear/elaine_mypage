@@ -1,14 +1,11 @@
 .hero-title {
-    margin: 0px;
+/*    margin: 0px;*/
     font-size: 6rem;
     text-shadow: 6px 6px 0px #fff;
     color: #252525;
     -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: #333;
     cursor: pointer;
-}
 
-.hero-title {
     display: flex;
     flex-wrap: wrap; /* Åý³æ¦r´«¦æ */
     justify-content: center;

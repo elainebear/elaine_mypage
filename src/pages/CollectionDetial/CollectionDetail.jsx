@@ -1,7 +1,7 @@
 ﻿import { useParams, Link } from "react-router-dom";
 import '../Home.css'
-//connect to firebase
 import { useEffect, useState } from "react";
+//connect to firebase
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 

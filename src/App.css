@@ -66,12 +66,59 @@ header {
 .hero-section {
     height: calc(100vh - 60px);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    display:grid;
+    grid-template-rows:repeat(5,1fr);
+    justify-items:center;
+
     background-color: #769973;
     text-align:center;
 }
+.hero-title{
+    grid-row:1/5;
+    align-self:center;
+}
+.hero-section button {
+    width: 90px;
+    height:90px;
+    border-radius:50%;
+    align-self: start;
+    background-color: #fff; /* 白色底 */
+    color: #769973; /* 按鈕文字使用主色 */
+    border: 2px solid #769973; /* 邊框也使用主色 */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    
+    transition: all 0.5s ease;
+}
+
+    .hero-section button:hover {
+        background-color: #769973;
+        color: #fff;
+        border: 2px solid #fff; 
+        transform: scale(1.2);
+    }
+
+        .hero-section button i {
+            animation: floatArrow 2s infinite;
+        }
+
+@keyframes floatArrow {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
 
 .container-header {
     width: 80%;

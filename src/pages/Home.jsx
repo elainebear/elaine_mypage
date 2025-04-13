@@ -1,16 +1,25 @@
 ﻿import './Home.css'
 import '../loader.css'
 import HeroText from "../HeroText.jsx";
+import { useRef } from 'react'
+
 
 function Home() {
+    const contentRef = useRef(null);
+    const scrollToContent = () => {
+        contentRef.current?.scrollIntoView({ behavior: 'smooth' }) // ?. (Optional chaining) 如果 contentRef.current 存在就執行
+    };
 
     return (
         <div className="hero-layout">
             <div className="hero-section">
-                    <HeroText />
+                <HeroText />
+                <button onClick={scrollToContent}>
+                    <i className="fa-solid fa-arrow-down fa-2x"></i>
+                </button>
             </div>
-        
-            <div className="body-items">
+
+            <div className="body-items" ref={contentRef}>
                 <div className="about_me">
                     <h3>About me</h3>
                     <div className="about_me-items self-img">照片</div>
@@ -32,11 +41,11 @@ function Home() {
                 {/*    <h3> Elaine Lin</h3>*/}
                 {/*    <p>This is an intro about me</p>*/}
                 {/*</div>*/}
-                <div className="media-type">
-                    <button className="media-type-btn">全部</button>
-                    <button className="media-type-btn">貼文</button>
-                    <button className="media-type-btn">影片</button>   
-                </div>
+                {/*<div className="media-type">*/}
+                {/*    <button className="media-type-btn">全部</button>*/}
+                {/*    <button className="media-type-btn">貼文</button>*/}
+                {/*    <button className="media-type-btn">影片</button>   */}
+                {/*</div>*/}
 
                 <div className="content">
                     <div className="sort">
