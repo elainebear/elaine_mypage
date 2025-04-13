@@ -14,7 +14,7 @@ function Home() {
 
         // 等待滾動完成後，再微調偏移
         setTimeout(() => {
-            window.scrollBy(0, -30); // 微調偏移，這裡 -100 是導覽列的高度
+            window.scrollBy(0, -35); // 微調偏移，這裡 -100 是導覽列的高度
         }, 500); // 延遲時間要與 scrollIntoView 的動畫時間相匹配
     };
 
@@ -23,7 +23,7 @@ function Home() {
             <div className="hero-section">
                 <HeroText />
                 <button onClick={scrollToContent} aria-label="scrolltocontent">
-                    <i className="fa-solid fa-arrow-down fa-2x"></i>
+                    <font>⭣</font>
                 </button>
             </div>
 

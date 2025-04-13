@@ -5,9 +5,9 @@ import Header from './Header';
 
 const Home = lazy(() => import("./pages/Home"));
 const Articles = lazy(() => import("./pages/Articles"));
-const ArticleDetail = lazy(() => import("./pages/ArticleDetial/ArticleDetail"));
+const ArticleDetail = lazy(() => import("./pages/ArticleDetail/ArticleDetail"));
 const Collections = lazy(() => import("./pages/Collections"));
-const CollectionDetail = lazy(() => import("./pages/CollectionDetial/CollectionDetail"));
+const CollectionDetail = lazy(() => import("./pages/CollectionDetail/CollectionDetail"));
 function MainApp() {
     return (
         //basename = "/elaine_mypage"

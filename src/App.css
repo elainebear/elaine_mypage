@@ -95,9 +95,11 @@ header {
         transform: scale(1.2);
     }
 
-        .hero-section button i {
+        .hero-section button font {
+            font-size:36px;
             animation: floatArrow 2s infinite;
         }
+
 
 @keyframes floatArrow {
     0% {
