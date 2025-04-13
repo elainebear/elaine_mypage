@@ -63,16 +63,17 @@ function Collections() {
             </div>
 
             <div className="collections">
-                {sortedCollections.map((collections) => (
-                    <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
-                        <p>{collections.c_title}</p>
-                        <p>{collections.date.toLocaleDateString()}</p>
-                        
-                    </Link>  
-                ))}
-                
+                {sortedCollections.length > 0 ?
+                    (sortedCollections.map((collections) => (
+                            <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
+                                <p>{collections.c_title}</p>
+                                <p>{collections.date.toLocaleDateString()}</p>
+                            </Link>
+                        ))
+                    ) : <h3>沒有符合的作品:0 </h3>
+                }
             </div>
-            
+
         </section>
     );
 

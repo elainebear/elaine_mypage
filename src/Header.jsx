@@ -1,30 +1,28 @@
 ﻿import './App.css'
 import './index.css'
-import Home from "./pages/Home";
-import Articles from "./pages/Articles";
-import Collections from "./pages/Collections";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { HashRouter, BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
+import { useState } from 'react'
+
+
 
 function Header() {
+    const [isActive, setIsActive] = useState(false);
+    const closeMenu = () => {
+        setIsActive(false);
+    };
     return (
-        <header>
-
-            <Router basename = "/elaine_mypage">
-                <h3>我的部落格</h3>
-                <nav>
-                    <a><Link to="/">首頁</Link></a> |
-                    <a><Link to="/articles">文章列表 </Link></a> |
-                    <a><Link to="/collections">關於我們</Link></a>
+        < header>
+            <div className="container-header">
+                <h3 className="logo">
+                    <Link to="/" onClick={closeMenu}> 我的部落格 </Link>
+                </h3>
+                <button className="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
+                <nav className={isActive ? "active" : ""}>
+                    <NavLink to="/" onClick={closeMenu} > Home </NavLink>
+                    <NavLink to="/articles" onClick={closeMenu}> Artcles </NavLink>
+                    <NavLink to="/collections" onClick={closeMenu}> Collections </NavLink>
                 </nav>
-                
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/articles" element={<Articles />} />
-                    <Route path="/collections" element={<Collections />} />
-                </Routes>
-                
-
-            </Router>
+            </div>
         </header>
     );
 }

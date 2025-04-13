@@ -73,42 +73,6 @@ header {
     text-align:center;
 }
 
-.hero-title {
-    margin: 0px;
-    font-size: 6rem;
-    text-shadow: 6px 6px 0px #fff;
-    color: transparent;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: #333;
-    cursor:pointer;
-}
-.hero-title {
-    display: flex;
-    flex-wrap: wrap; /* 讓單字換行 */
-    justify-content: center;
-    gap: 0.5rem; /* 設定字母之間的間距 */
-}
-
-.hero-word {
-    display: inline-block; /* 每個單字作為一個區塊 */
-    white-space: nowrap; /* 單字內的字母不會換行 */
-}
-
-.hero-letter {
-    display: inline-block; /* 每個字母保持在同一行內 */
-    margin-right: 2px; /* 字母間的距離 */
-}
-
-.hero-word span {
-    display: inline-block; /* 讓每個字母還是保有動畫 */
-}
-
-
-
-
-
-
-
 .container-header {
     width: 80%;
     display: flex;
@@ -187,10 +151,6 @@ footer {
             display: flex;
         }
 }
-
-
-
-
 
 /*手機寬度*/
 @media(max-width:450px){

@@ -1,12 +1,13 @@
 ﻿import { Link } from "react-router-dom";
-import ArticleList from "./ArticleList.jsx";
+import { useEffect, useState, Suspense, lazy } from "react";
 import './Home.css'
 
 //connect to firebase
 import { db } from "../firebase.js";
-import { useEffect, useState } from "react";
+
 import { collection, getDocs } from "firebase/firestore";
 
+const ArticleList = lazy(() => import("./ArticleList"));
 
 
 function Articles() {
@@ -28,9 +29,6 @@ function Articles() {
         }
         fetchArticles();
     }, []);
-    if (!articles) {
-        return <p>Loading...</p>
-    }
 
     // 用搜尋框的文字即時搜尋 <input/>
     const filterArticles = articles.filter(article => article.title.toLowerCase().includes(query.toLowerCase()));
@@ -72,16 +70,15 @@ function Articles() {
                     </select>
                 </div>
             </div>
-            
-            {sortedArticles.length > 0 ? (
-                sortedArticles.map((articles) => (
-                    <Link to={`/articles/${articles.id}`} key={articles.id}/*className="articles-items"*/>
-                        <ArticleList article={articles} />
-                    </Link>
-                ))
-                
-            ): <h3>  </h3>}
-            
+            <Suspense fallback={<div>Loading...</div>}>
+                {sortedArticles.length > 0 ? (
+                    sortedArticles.map((articles) => (   
+                        <Link to={`/articles/${articles.id}`} key={articles.id}/*className="articles-items"*/>
+                            <ArticleList article={articles} />
+                        </Link>
+                    ))
+                ) : <h3>沒有符合的文章:( </h3>}
+            </Suspense>
         </section>
 
     );

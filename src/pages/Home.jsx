@@ -7,11 +7,7 @@ function Home() {
     return (
         <div className="hero-layout">
             <div className="hero-section">
-                {/*<h1 className="hero-title">*/}
-                    
                     <HeroText />
-
-                {/*</h1>*/}
             </div>
         
             <div className="body-items">
@@ -45,8 +41,8 @@ function Home() {
                 <div className="content">
                     <div className="sort">
                         <select>
-                            <option>由近到遠</option>
-                            <option>由遠到近</option>
+                            <option>最新</option>
+                            <option>最舊</option>
                             <option>熱門</option>
                         </select>
                     </div>
