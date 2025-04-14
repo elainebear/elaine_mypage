@@ -10,7 +10,9 @@ import { db } from "../../firebase.js";
 function ArticleDetail() {
     const { id } = useParams(); // 取得網址上的 id
     const [article, setArticle] = useState(null);
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         const fetchArticle = async () => {
             const docRef = doc(db, "articles", id); // firebase collection 名字(articles)

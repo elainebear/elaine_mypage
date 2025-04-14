@@ -1,33 +1,22 @@
 ﻿import { Link } from "react-router-dom";
-import { useEffect, useState, Suspense, lazy } from "react";
+import { useState, Suspense, lazy, useEffect } from "react";
 import './Home.css'
 
-//connect to firebase
-import { db } from "../firebase.js";
-import { collection, getDocs } from "firebase/firestore";
+
+import UsaArticles from "./useArticles";
+import ScrollToTop from "../ScrollToTop";
 
 const ArticleList = lazy(() => import("./ArticleList"));
 
 
 function Articles() {
-    const [articles, setArticles] = useState([]);
     const [query, setQuery] = useState("");
     const [sortOrder, setSortOrder] = useState("newest");
-    //const []
-
-    // 從 firebase 抓資料
     useEffect(() => {
-        async function fetchArticles() {
-            const query_allarti = await getDocs(collection(db, "articles"));
-            const data = query_allarti.docs.map((doc) => ({
-                id : doc.id,
-                ...doc.data(),
-                date: doc.data().date.toDate(), //確保 date 是 JS 日期物件
-            }));
-            setArticles(data);
-        }
-        fetchArticles();
+        window.scrollTo(0, 0);
     }, []);
+
+    const articles = UsaArticles();
 
     // 用搜尋框的文字即時搜尋 <input/>
     const filterArticles = articles.filter(article => article.title.toLowerCase().includes(query.toLowerCase()));

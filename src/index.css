@@ -98,6 +98,9 @@ input {
         outline:none;
         border: 1px solid #AAAAAA;
     }
+    input:hover {
+        background-color: #e9f2e9;
+    }
 
 button {
     border-radius: 5px;
@@ -108,14 +111,14 @@ button {
     cursor: pointer;
     transition: border-color 0.25s;
 }
-    button:hover, input:hover {
-        background-color: #e9f2e9;
+    button:hover{
+        background-color:#769973;
+        color:#fff;
     }
     button:focus,
     button:focus-visible {
         background-color: #769973;
-        color:#fff;
-
+        color: #fff;
     }
 
 .select-wrapper {

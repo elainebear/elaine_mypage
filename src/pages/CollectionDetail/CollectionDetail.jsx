@@ -8,7 +8,9 @@ import { db } from "../../firebase.js";
 function CollectionDetail() {
     const { id } = useParams(); // 取得網址上的 id
     const [collection, setCollection] = useState(null);
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         const fetchCollection = async () => {
             const docRef = doc(db, "collections", id); // firebase collection 名字(collections)

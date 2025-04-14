@@ -9,7 +9,9 @@ function Collections() {
     const [collections, setCollection] = useState([]);
     const [query, setQuery] = useState("");
     const [sortOrder, setSortOrder] = useState("newest");
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         async function fetchCollection() {
             const query_coll = await getDocs(collection(db, "collections"));
