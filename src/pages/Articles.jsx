@@ -4,7 +4,6 @@ import './Home.css'
 
 
 import UsaArticles from "./useArticles";
-import ScrollToTop from "../ScrollToTop";
 
 const ArticleList = lazy(() => import("./ArticleList"));
 
