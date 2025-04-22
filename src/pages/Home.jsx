@@ -1,5 +1,6 @@
 ﻿import './Home.scss'
 import '../loader.scss'
+import '../slider.scss'
 import { useRef, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
