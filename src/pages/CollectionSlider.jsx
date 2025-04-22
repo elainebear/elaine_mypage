@@ -1,7 +1,6 @@
 ﻿import './Home.scss';
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import UseCollections from './useCollections';
 
 function CollectionSlider({ collections }) {
     // 用於無縫輪播的延伸資料
@@ -11,7 +10,6 @@ function CollectionSlider({ collections }) {
 
 
     const [currentInd, setCurrentInd] = useState(1);
-    const realIndex = (currentInd - 2 + collections.length) % collections.length;
 
     const [isAnimating, setIsAnimating] = useState(true);
     const [isTransitioning, setIsTransitioning] = useState(false);
@@ -132,8 +130,6 @@ function CollectionSlider({ collections }) {
         setCurrentInd(targetInd);
     };
 
-    
-
     // 下一仗
     const nextSlide = () => {
         if (!isTransitioning) {
@@ -195,8 +191,6 @@ function CollectionSlider({ collections }) {
                         <span
                             key={index}
                             className={`dot ${isActive ? "active" : ""}`}
-
-                            style={{ cursor: "pointer" }}
                         ></span>
                     );
                 })}
