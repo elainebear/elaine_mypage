@@ -1,4 +1,5 @@
 ﻿import './Home.scss';
+import '../slider.scss';
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
