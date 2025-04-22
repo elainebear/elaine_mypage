@@ -13,7 +13,7 @@
     }
 }
 .slide {
-    //flex: 0 0 calc((100% - 40px) / 2);
+    flex: 0 0 calc((100% - 40px) / 2);
     aspect-ratio: 16 / 9;
     border-radius: 20px;
     margin: 10px;

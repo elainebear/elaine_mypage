@@ -179,7 +179,7 @@ function CollectionSlider({ collections }) {
 
             <div className="dots">
                 {collections.map((_, index) => {
-                    // 這邊我們計算畫面上實際應該顯示哪幾張原始資料 index
+                    // 這邊計算畫面上實際應該顯示哪幾張原始資料 index
                     const visibleIndexes = [];
                     for (let i = 0; i < visibleSlides; i++) {
                         const realIndex = (currentInd - 2 + i + collections.length) % collections.length;
