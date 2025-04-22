@@ -16,6 +16,7 @@ function CollectionSlider({ collections }) {
     const sliderRef = useRef(null);
     const intervalRef = useRef(null); // 用來儲存 interval id
 
+    //響應式，決定一次要呈現一張還是兩張投影片
     const [visibleSlides, setVisibleSlides] = useState(2);
 
     useEffect(() => {
@@ -99,9 +100,9 @@ function CollectionSlider({ collections }) {
         // 當瀏覽器標籤頁從隱藏變為可見（例如最小化再打開）
         const handleVisibilityChange = () => {
             if (document.visibilityState === 'visible') {
-                // 這裡透過觸發 reflow（offsetHeight）來確保 transition 可以重新作用
+                // 這裡觸發 reflow（offsetHeight）確保 transition 可以重新作用
                 sliderRef.current?.offsetHeight;
-                setCurrentInd((prev) => prev); // 強制 React 做重新渲染（即便 index 沒變）
+                setCurrentInd((prev) => prev); // 強制 React 做重新渲染
             }
         };
         window.addEventListener("resize", handleResize);
@@ -124,14 +125,14 @@ function CollectionSlider({ collections }) {
             setCurrentInd(index + 1);
         }
     };
-
+    // 下一仗
     const nextSlide = () => {
         if (!isTransitioning) {
             setIsTransitioning(true);
             setCurrentInd((prev) => prev + 1);
         }
     };
-
+    // 上一張
     const prevSlide = () => {
         if (!isTransitioning) {
             setIsTransitioning(true);
