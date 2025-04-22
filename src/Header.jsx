@@ -1,5 +1,4 @@
-﻿import './App.css'
-import './index.css'
+﻿import './Header.scss'
 import { HashRouter, BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 import { useState } from 'react'
 
@@ -16,7 +15,7 @@ function Header() {
                 <h3 className="logo">
                     <Link to="/" onClick={closeMenu}> Elaine </Link>
                 </h3>
-                <button className="menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
+                <button className="container-header__menu-toggle" onClick={() => setIsActive(!isActive)}>&#9776;</button>
                 <nav className={isActive ? "active" : ""}>
                     <NavLink to="/" onClick={closeMenu} > Home </NavLink>
                     <NavLink to="/articles" onClick={closeMenu}> Artcles </NavLink>

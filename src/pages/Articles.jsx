@@ -1,6 +1,6 @@
 ﻿import { Link } from "react-router-dom";
 import { useState, Suspense, lazy, useEffect } from "react";
-import './Home.css'
+import './Home.scss'
 
 
 import UsaArticles from "./useArticles";
@@ -40,6 +40,9 @@ function Articles() {
     //---
     return (
         <section className="body-items">
+            <p>
+                <Link to="/" className="return"> 返回首頁</Link>
+            </p>
             <h3 className="heading"> {heading} </h3>
             <div className="flex-container">
                 <input

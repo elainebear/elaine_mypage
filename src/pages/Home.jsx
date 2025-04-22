@@ -1,16 +1,24 @@
-﻿import './Home.css'
-import '../loader.css'
+﻿import './Home.scss'
+import '../loader.scss'
 import { useRef, useEffect } from 'react'
-import HeroText from "../HeroText.jsx";
-import UseArticles from "./useArticles.jsx";
-import ArticleCard from './ArticleCard';
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+
+import HeroText from "../HeroText.jsx";
+import { toggleTheme } from "../store/themeSlice";
+import UseArticles from "./useArticles";
+import useCollections from "./useCollections";
+import ArticleCard from './ArticleCard';
+import CollectionSlider from './CollectionSlider';
 
 
 
 function Home() {
     const contentRef = useRef(null);
-    //const horizontalRef = useRef(null);
+
+    const dispatch = useDispatch();
+    const theme = useSelector((state) => state.theme.mode);
+
 
     const scrollToContent = () => {
         contentRef.current?.scrollIntoView({
@@ -18,10 +26,10 @@ function Home() {
             block: 'start',
         });
 
-        // 等待滾動完成後，再微調偏移
+        // 滾動完成後微調偏移
         setTimeout(() => {
-            window.scrollBy(0, -35); // 微調偏移，這裡 -100 是導覽列的高度
-        }, 500); // 延遲時間要與 scrollIntoView 的動畫時間相匹配
+            window.scrollBy(0, -35); // 微調偏移
+        }, 500); // 延遲時間與 scrollIntoView 的動畫時間相同
     };
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,15 +37,26 @@ function Home() {
 
     const articles = UseArticles();
     const previewArticles = articles.sort((a, b) => b.date - a.date).slice(0, 3);
-
+    const collections = useCollections();
+    const previewCollections = collections.sort((a, b) => b.date - a.date).slice(0, 3);
+    const testCollections = [
+        { id: "1", c_title: "測試1", c_date: new Date() },
+        { id: "2", c_title: "測試2", c_date: new Date() },
+        { id: "3", c_title: "測試3", c_date: new Date() },
+    ];
     return (
-        <div className="hero-layout">
+        <div className="hero-layout ${theme}" >
+            
+
             <div className="hero-section">
                 <HeroText />
-                <button onClick={scrollToContent} aria-label="scrolltocontent">
+                <button onClick={scrollToContent} aria-label="scrolltocontent" className="hero-section__button">
                     <font>⭣</font>
                 </button>
             </div>
+            {/*<button onClick={() => dispatch(toggleTheme())} className="button hero-layout__button--switchTheme">*/}
+            {/*    切換主題（目前：{theme}）*/}
+            {/*</button>*/}
 
             <div className="body-items" ref={contentRef} id="homeContent">
                 <div className="about_me">
@@ -65,7 +84,7 @@ function Home() {
 
                 <div className="content" id="homeArticle">
                     <div className="articlePreview"> 
-                        <h2>Latest Posts</h2>
+                        <h2 className="content_h2">Latest Posts</h2>
                         <div className="articleContent" >
                             {previewArticles.map((article) => (
                                 <Link to={`/articles/${article.id}`} key={article.id}>
@@ -73,10 +92,21 @@ function Home() {
                                 </Link>
                             ))}
                         </div>
-                        <Link to={`/articles`} id="btn-allArticles">
+                        <Link to={`/articles`} className="articlePreview__button--article">
                             Explore all articles ✨
                         </Link>
-                    </div>          
+                    </div>
+
+                    <div className="collectionPreview">
+                        <h2 className="content_h2">New Posts</h2>
+
+                        {previewCollections.length > 0 && (
+                            <CollectionSlider collections={previewCollections} />
+                        )}
+                        <Link to={`/collections`} className="collectionPreview__button--collection">
+                            Explore all works ✨
+                        </Link>
+                    </div>        
                 </div>
             </div>
         </div>

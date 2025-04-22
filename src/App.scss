@@ -1,3 +1,6 @@
+@use './variables' as *;
+@use './button';
+
 #root {
     max-width: 100%;
     margin: 0 auto;
@@ -32,70 +35,64 @@
   }
 }
 
-
-
-
-
-
-header {
-    width: 100%;
-    height:65px;
-    background-color: #769973;
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
 .hero-layout {
     width:100%;
     display:flex;
     flex-direction: column;
+
+    & .light {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color:$secondary-color;
+    }
+    & .dark {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #ccc;
+    }
 }
+
 .hero-section {
     height: calc(100vh - 60px);
     width: 100%;
-
     display:grid;
     grid-template-rows:repeat(5,1fr);
     justify-items:center;
-
-    background-color: #769973;
+    background-color: $primary-color;
     text-align:center;
+
+    &__button {
+        width: 85px;
+        height:85px;
+        border-radius:50%;
+        align-self: center;
+        background-color: $secondary-color; 
+        color: $primary-color;
+        border: 2px solid $primary-color; 
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.5s ease;
+
+         font {
+            font-size:36px;
+            animation: floatArrow 2s infinite;
+        }
+
+        &:hover {
+            background-color: $primary-color;
+            color: $secondary-color;
+            border: 2px solid $secondary-color; 
+            transform: scale(1.2);
+        }
+    }
 }
 .hero-title{
     grid-row:1/4;
     align-self:center;
 }
-.hero-section button {
-    width: 85px;
-    height:85px;
-    border-radius:50%;
-    align-self: center;
-
-    background-color: #fff; 
-    color: #769973;
-    border: 2px solid #769973; 
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    
-    transition: all 0.5s ease;
-}
-
-    .hero-section button:hover {
-        background-color: #769973;
-        color: #fff;
-        border: 2px solid #fff; 
-        transform: scale(1.2);
-    }
-
-        .hero-section button font {
-            font-size:36px;
-            animation: floatArrow 2s infinite;
-        }
 
 
 @keyframes floatArrow {
@@ -113,16 +110,6 @@ header {
     }
 }
 
-
-.container-header {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .container-body {
     width: 100%;
     min-height: 100%;
@@ -135,12 +122,12 @@ header {
     width: 60%;
     margin: 0 auto;
 
-    background-color: #FDFFDE;
+    background-color: $secondary-color;
     padding:10px;
 }
 footer {
     width: 100%;
-    background-color: #769973;
+    background-color: $primary-color;
 }
 .container-footer {
     display: flex;
@@ -151,25 +138,22 @@ footer {
     grid-template-rows: repeat(2,1fr);
     justify-items:center;
     gap:5px;
-    
-}
-    .container-footer a {
+
+    a {
         color: #000;
         align-self:center;
-    }
-        .container-footer a:hover {
-            color: #fff;
+
+        &:hover {
+            color: $secondary-color;
         }
-    .container-footer p {
+    }
+    p {
         margin: 5px;
         grid-column:1/4;
     }
-
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    background-color: #fdffde;
 }
+ 
+
 
 
 /*平板寬度*/
@@ -178,27 +162,9 @@ footer {
     .body-items {
         width: 80%;
     }
-    .menu-toggle{
-        display:block;
-    }
 
-    nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        gap:0;
-    }
-        nav a {
-            background-color: rgba(118, 153, 115, 0.9);
-            border-radius:0px;
-        }
-        nav.active {
-            display: flex;
-        }
+
+    
 }
 
 /*手機寬度*/

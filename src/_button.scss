@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+button {
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    font-weight: 650;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+}
+
+@mixin basic-btn($radius: $btn-radius, $padding: $btn-padding) {
+    border: 1px solid $primary-color;
+    border-radius: $radius;
+    padding: $padding;
+
+}
+@mixin btn-hover($bg, $color, $border-color: $color) {
+    &:hover {
+        background-color: $bg;
+        color: $color;
+        border: 1px solid $border-color;
+    }
+}
+
+@mixin explore-btn($bg, $color) {
+    @include basic-btn(25px, 10px);
+    background-color: $bg;
+    color: $color;
+    margin: 10px;
+    transition: transform 0.7s ease-in-out;
+
+    @include btn-hover($color, $bg, $bg);
+    &:hover {
+        transform: scale(1.05);
+        
+    }
+}
+
+.return {
+    @include basic-btn();
+    transition: all 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @include btn-hover($primary-color, $secondary-color, $primary-color);
+}

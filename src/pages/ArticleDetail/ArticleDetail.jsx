@@ -1,5 +1,5 @@
 ﻿import { useParams, Link } from "react-router-dom";
-import '../Home.css'
+import '../Home.scss'
 import { useEffect, useState } from "react";
 //connect to firebase
 

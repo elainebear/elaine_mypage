@@ -1,4 +1,4 @@
-﻿import './App.css'
+﻿import './App.scss'
 import { useEffect, useState } from "react"
 import MainApp from './MainApp';
 import FullPageLoader from './FullPageLoader';

@@ -1,10 +1,11 @@
+@use './variables' as *;
+
 .hero-title {
-/*    margin: 0px;*/
+    /*    margin: 0px;*/
     font-size: 5rem;
     text-shadow: 6px 6px 0px #fff;
     color: #252525;
     cursor: pointer;
-
     display: flex;
     flex-wrap: wrap; /* 讓單字換行 */
     justify-content: center;
@@ -14,13 +15,14 @@
 .hero-word {
     display: inline-block; /* 每個單字作為一個區塊 */
     white-space: nowrap; /* 單字內的字母不會換行 */
+
+    span {
+        display: inline-block; /* 讓每個字母還是保有動畫 */
+    }
+
 }
 
 .hero-letter {
     display: inline-block; /* 每個字母保持在同一行內 */
     margin-right: 2px; /* 字母間的距離 */
-}
-
-.hero-word span {
-    display: inline-block; /* 讓每個字母還是保有動畫 */
 }

@@ -1,3 +1,6 @@
+@use './variables' as *;
+@use './button';
+
 html {
     scroll-behavior: smooth;
 }
@@ -32,45 +35,19 @@ body::-webkit-scrollbar-thumb {
     font-weight: 400;
 /*    color-scheme: light dark; 之後設計好dark模式再改回來*/
 /*    color: rgba(255, 255, 255, 0.87);*/
-    background-color: #fff;
+    background-color: $secondary-color;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-}
+
 
 a{
     text-decoration:none;
-    color:#769973;
+    color: $primary-color;
 }
-
-header a {
-    font-weight: 700;
-    color: #fff;
-    padding: 5px;
-    text-decoration: inherit;
-    border-radius: 5px;
-    transition: background-color ease-in-out 0.3s;
-}
-nav{
-    display:flex;
-    gap:10px;
-}
-nav a:hover {
-    background-color: #fff;
-    color: #769973;
-}
-
-nav a.active {
-    background-color: #fff;
-    color: #769973;
-}
-
 
 
 body {
@@ -78,7 +55,6 @@ body {
     min-width: 320px;
     min-height: 100vh;
 }
-
 
 
 input {
@@ -93,37 +69,18 @@ input {
     font-family: inherit;
     text-align:center;
     transition: border-color 0.25s;
-}
-    input:focus {
+
+    &:focus {
         outline:none;
         border: 1px solid #AAAAAA;
     }
-    input:hover {
+    &:hover {
         background-color: #e9f2e9;
     }
-
-button {
-    border-radius: 5px;
-    border: 1px solid #AAAAAA;
-    font-size: 1em;
-    font-weight: 650;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s;
 }
-    button:hover{
-        background-color:#769973;
-        color:#fff;
-    }
-    button:focus,
-    button:focus-visible {
-        background-color: #769973;
-        color: #fff;
-    }
 
 .select-wrapper {
     position: relative;
-/*    background-color: #ccc;*/
     margin: 0 20px;
 }
 
@@ -139,36 +96,15 @@ select {
     text-align:center;
     font-family: inherit;
 
-    background-color: #769973;
-    color: #fff;
+    background-color: $primary-color;
+    color: $secondary-color;
     cursor: pointer;
     transition: border-color 0.25s;
-}
 
-    select:hover {
-        background-color: #fff;
-        color: #769973;
+    &:hover {
+        background-color: $secondary-color;
+        color: $primary-color;
         cursor: pointer;
     }
-
-footer a{
-
 }
-
-/*@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-    a {
-        color:#769973;
-        text-decoration:none;
-    }
-    a:hover {
-        color: #769973;
-    }
-  button {
-    background-color: #f9f9f9;
-  }
-}*/
 

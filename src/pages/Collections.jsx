@@ -1,5 +1,5 @@
 ﻿import { Link } from "react-router-dom";
-import './Home.css'
+import './Home.scss'
 import { useEffect, useState } from "react";
 //connect to firebase
 import { db } from "../firebase.js";
@@ -44,6 +44,9 @@ function Collections() {
 
     return (
         <section className="body-items">
+            <p>
+                <Link to="/" className="return"> 返回首頁</Link>
+            </p>
             <h3 className="heading"> {heading} </h3>
             
             <div className="flex-container">

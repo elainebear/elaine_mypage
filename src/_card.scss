@@ -1,0 +1,29 @@
+@use './variables' as *;
+
+.card {
+    /*    width:300px;*/
+    scroll-snap-align: center;
+    height: 100%;
+    background-color: $secondary-color;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    &__pic {
+        min-height: 150px;
+        border-radius: 20px 20px 0px 0px;
+        background: linear-gradient(135deg, #f8d5e3 0%, #e6d7f3 50%, #efc283 100%);
+    }
+
+    &__title, &__date, &__abstr {
+        margin: 0px;
+        padding: 3px 5px;
+    }
+
+    &__date {
+        color: #7c897b;
+    }
+
+    &__abstr {
+        color: $primary-color;
+        font-weight: 600;
+    }
+}

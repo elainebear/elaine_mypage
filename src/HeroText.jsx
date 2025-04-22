@@ -1,5 +1,5 @@
 ﻿import { useEffect, useRef, useState } from "react";
-import "./HeroText.css";
+import "./HeroText.scss";
 
 function HeroText() {
     const containerRef = useRef(null);

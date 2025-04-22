@@ -1,4 +1,4 @@
-﻿import './App.css'
+﻿import './App.scss'
 import { HashRouter, BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
 import { Suspense, lazy  } from "react"
 import Header from './Header';
