@@ -11,6 +11,8 @@ function CollectionSlider({ collections }) {
 
 
     const [currentInd, setCurrentInd] = useState(1);
+    const realIndex = (currentInd - 2 + collections.length) % collections.length;
+
     const [isAnimating, setIsAnimating] = useState(true);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const sliderRef = useRef(null);
@@ -120,11 +122,18 @@ function CollectionSlider({ collections }) {
     }, [currentInd, extendedCollections.length]);
 
     const goToSlide = (index) => {
-        if (!isTransitioning) {
-            setIsTransitioning(true);
-            setCurrentInd(index + 1);
-        }
+        if (isTransitioning) return;
+
+        const targetInd = index + 1;
+        // 如果目標 index 已經是當前的，不執行
+        if (targetInd === currentInd) return;
+
+        setIsTransitioning(true);
+        setCurrentInd(targetInd);
     };
+
+    
+
     // 下一仗
     const nextSlide = () => {
         if (!isTransitioning) {
@@ -172,13 +181,25 @@ function CollectionSlider({ collections }) {
             <button className="arrow right" onClick={nextSlide} disabled={isTransitioning}>❯</button>
 
             <div className="dots">
-                {collections.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`dot ${index === currentInd - 2 ? "active" : ""}`}
-                        onClick={() => goToSlide(index)}
-                    ></span>
-                ))}
+                {collections.map((_, index) => {
+                    // 這邊我們計算畫面上實際應該顯示哪幾張原始資料 index
+                    const visibleIndexes = [];
+                    for (let i = 0; i < visibleSlides; i++) {
+                        const realIndex = (currentInd - 2 + i + collections.length) % collections.length;
+                        visibleIndexes.push(realIndex);
+                    }
+
+                    const isActive = visibleIndexes.includes(index);
+
+                    return (
+                        <span
+                            key={index}
+                            className={`dot ${isActive ? "active" : ""}`}
+
+                            style={{ cursor: "pointer" }}
+                        ></span>
+                    );
+                })}
             </div>
         </div>
     );
