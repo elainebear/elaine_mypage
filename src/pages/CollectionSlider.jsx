@@ -166,9 +166,9 @@ function CollectionSlider({ collections }) {
                             style={{ flex: `0 0 calc((100% - ${20 * visibleSlides}px) / ${visibleSlides})`, }}
 
                         >
-                            {/*<p>{collection.c_title}</p>*/}
-                            {/*<p>{collection.date.toLocaleDateString()}</p>*/}
-                            {collection.src ? collection.src : <div className="slide__pic">{collection.c_title}</div>}
+                            {collection.src
+                                ? <img src={collection.src} className="slide__pic"></img>
+                                : <div className="slide__pic">{collection.c_title}</div>}
                         </Link>
                     ) : null
                 ))}
