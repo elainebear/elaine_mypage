@@ -40,7 +40,7 @@ function Home() {
     const collections = useCollections();
     const previewCollections = collections.sort((a, b) => b.date - a.date).slice(0, 3);
 
-    const pic = './public/image/me.jpg';
+    const pic = './image/me.jpg';
     return (
         <div className="hero-layout ${theme}" >
             
