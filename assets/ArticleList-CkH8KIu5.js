@@ -1,0 +1,1 @@
+import{j as s}from"./index-BiZjHLQG.js";function i({article:t}){return s.jsxs("div",{className:"articles-items",children:[s.jsx("h2",{children:s.jsx("b",{children:t.title})}),s.jsxs("p",{children:["發布日期：",t.date.toLocaleDateString()]}),s.jsx("p",{children:t.abstr})]})}export{i as default};
