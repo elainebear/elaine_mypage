@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 //connect to firebase
 import { db } from "../firebase.js";
 import { collection, getDocs } from "firebase/firestore";
+import '../slider.scss';
 
 function Collections() {
     const [collections, setCollection] = useState([]);
@@ -70,8 +71,14 @@ function Collections() {
                 {sortedCollections.length > 0 ?
                     (sortedCollections.map((collections) => (
                             <Link to={`/collections/${collections.id}`} key={collections.id} className="collections-items">
-                                <p>{collections.c_title}</p>
-                                <p>{collections.date.toLocaleDateString()}</p>
+
+                            {collections.src
+                                ? <img src={collections.src} className="collections--hover collections--thumbnail"></img>
+                                : <div className= "collections--hover">
+                                    <p>{collections.c_title}</p>
+                                    <p>{collections.date.toLocaleDateString()}</p>
+                                </div>}
+
                             </Link>
                         ))
                     ) : <h3>沒有符合的作品:0 </h3>
