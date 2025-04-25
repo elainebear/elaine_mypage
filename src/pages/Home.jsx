@@ -1,11 +1,11 @@
 ﻿import './Home.scss'
 import '../loader.scss'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 
 import HeroText from "../HeroText.jsx";
-import { toggleTheme } from "../store/themeSlice";
+//import { toggleTheme } from "../store/themeSlice";
 import UseArticles from "./useArticles";
 import useCollections from "./useCollections";
 import ArticleCard from './ArticleCard';
@@ -15,9 +15,9 @@ import CollectionSlider from './CollectionSlider';
 
 function Home() {
     const contentRef = useRef(null);
-
-    const dispatch = useDispatch();
-    const theme = useSelector((state) => state.theme.mode);
+    const [imgError, setImgError] = useState(false);
+    //const dispatch = useDispatch();
+    //const theme = useSelector((state) => state.theme.mode);
 
 
     const scrollToContent = () => {
@@ -40,6 +40,7 @@ function Home() {
     const collections = useCollections();
     const previewCollections = collections.sort((a, b) => b.date - a.date).slice(0, 3);
 
+    const pic = './public/image/me.png';
     return (
         <div className="hero-layout ${theme}" >
             
@@ -57,7 +58,13 @@ function Home() {
             <div className="body-items" ref={contentRef} id="homeContent">
                 <div className="about_me">
                     <h1 id="about_me_title">About me</h1>
-                    <div className="about_me-items " id="self-img">照片</div>
+                    <div className="about_me-items " id="self-img">
+                        {!imgError
+                            ? (<img src={pic} onError={() => setImgError(true)} className="mypic"></img>)
+                            : (<font> 現在還沒有圖片唷⭐⭐ </font>)
+                            }
+                        
+                    </div>
                     <div className="about_me-items " id="self-des">
                         <div className="des-font">
                             <p>Hi there, I'm Elaine ♡ Welcome to my little blog corner~</p>

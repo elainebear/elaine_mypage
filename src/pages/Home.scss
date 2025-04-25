@@ -66,11 +66,16 @@
         grid-column:1/5;
     }
 }
-
+.mypic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 .homeContent {
-    height:80vh;
-    background-color:#ccc;
+    height: 80vh;
+    background-color: #ccc;
     display: flex;
     flex-direction: column;
     padding: 20px;
