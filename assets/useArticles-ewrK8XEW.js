@@ -1,0 +1,1 @@
+import{r as a}from"./index-IQt3osc0.js";import{g as i,c as o,d as l}from"./firebase-ezJHQ7Mu.js";function u(){const[e,s]=a.useState([]);return a.useEffect(()=>{async function r(){const c=(await i(o(l,"articles"))).docs.map(t=>({id:t.id,...t.data(),date:t.data().date.toDate()}));s(c)}r()},[]),e}export{u as U};
