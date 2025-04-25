@@ -95,7 +95,7 @@ article {
     max-width: 1200px;
     margin: 20px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自適應列數 */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自適應列數 */
     gap: 20px;
 
     &-items {
@@ -144,18 +144,6 @@ article {
     }
 }
 
-
-//.return {
-//    border: 1px $primary-color solid;
-//    border-radius: 5px;
-//    padding:3px;
-//    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
-//    &:hover {
-//        background-color: $primary-color;
-//        color: $secondary-color;
-//    }
-//}
 
 
 .flex-container{
@@ -224,7 +212,7 @@ article {
 
 .articleContent {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 

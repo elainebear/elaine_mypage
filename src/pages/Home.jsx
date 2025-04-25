@@ -39,11 +39,7 @@ function Home() {
     const previewArticles = articles.sort((a, b) => b.date - a.date).slice(0, 3);
     const collections = useCollections();
     const previewCollections = collections.sort((a, b) => b.date - a.date).slice(0, 3);
-    const testCollections = [
-        { id: "1", c_title: "測試1", c_date: new Date() },
-        { id: "2", c_title: "測試2", c_date: new Date() },
-        { id: "3", c_title: "測試3", c_date: new Date() },
-    ];
+
     return (
         <div className="hero-layout ${theme}" >
             
@@ -71,7 +67,7 @@ function Home() {
                         </div>
                         
                         <div className="des-web">
-                            <a href="" target="_blank">Notion</a> 
+                            <a href="https://www.notion.so/1e0f76ff11e7809ca322cde3445690eb" target="_blank">Notion</a> 
                         </div>
                         <div className="des-web">
                             <a href="https://codepen.io/Elaine-the-animator" target="_blank">CodePen</a> 
